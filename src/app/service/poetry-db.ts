@@ -1,19 +1,20 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, Injector } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class PoetryDb {
-  title="not changed";
-  author="not changed";
 
-  constructor(private http:HttpClient){ }
+  constructor(private http:HttpClient, 
+              /*@Inject('poemTitle') private title:string, 
+              @Inject('author') private author:string*/)//when I tried to use injection entire project goes blank 
+          { }
 
   getPoetryData(/*title:string, author:string*/){
-    // console.log("Title from App: " + title);
-    // console.log("Author from App: " + author);
+    // console.log("Poem Title: " + this.title);
+    // console.log("Poem Author: " + this.author);
     // this.title = title;
     // this.author = author;
     //console.log("Title in Service: " + this.title);
