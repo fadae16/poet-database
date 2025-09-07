@@ -34,7 +34,7 @@ export class App {
     }
 
     this.poetryData = this.http.get(this.url);
-    this.poetryData.subscribe((response:any) => {
+    this.poetryData.subscribe((response:any) => {//was not able to get error checking to work sadly
         this.poetryData = response;
         console.log('Data fetched:', this.poetryData);
       },
