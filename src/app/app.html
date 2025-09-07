@@ -2,10 +2,9 @@
 <input #poemTitle id="poemTitle" type="text" placeholder="Enter Poem Title"/>
 <br/>
 <input #author id="author" type="text" placeholder="Enter Author Name"/>&nbsp;
-<!-- <button (click)="searchDb(poemTitle.value, author.value)">Search</button> -->
-<button (click)="getData()">Search</button>
+<button (click)="getData(poemTitle.value, author.value)">Search</button>
 <div>
-  @for (poem of poetryData; track poem) {
+  @for (poem of poetryData; track poem.title) {
     <ul>
       <li><b>Title: </b>{{poem.title}}</li>
       <li><b>Author: </b>{{poem.author}}</li>
